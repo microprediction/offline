@@ -62,7 +62,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: ${{ github.ref }}
     
-      - name: Cat timestamp file 
-        run: | 
-           tail timestamps.csv
-
+  
