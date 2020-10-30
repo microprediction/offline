@@ -8,6 +8,9 @@ on:
     # Public github accounts get 2000 minutes / month 
     # * is a special character in YAML so you have to quote this string
     - cron:  '0 1 * * *'
+  push:
+    branches:
+      - main
 
 jobs:
   build:
