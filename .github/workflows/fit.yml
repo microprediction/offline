@@ -36,8 +36,6 @@ jobs:
       - name: Create data in timestamp2
         run: |
           python fit.py
-          pwd
-          cat timestamp.csv
       - name: Show git status
         run: | 
           git status
