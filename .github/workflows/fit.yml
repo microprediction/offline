@@ -1,0 +1,60 @@
+# Example of a scheduled job that commits new data file
+
+name: Fit my model and commit new parameters 
+
+on:
+  schedule:
+    # How often do you want to fit your model? 
+    # Public github accounts get 2000 minutes / month 
+    # * is a special character in YAML so you have to quote this string
+    - cron:  '*/15 * * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: checkout
+        uses: actions/checkout@v2
+
+      - name: setup python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+
+      - name: Create data in timestamp2
+        run: |
+          python fit.py
+          pwd
+          cat timestamp.csv
+      - name: Show git status
+        run: | 
+          git status
+      - name: Add data files  
+        run: |
+          git config --local user.name  ${{ github.actor }}
+          git config --local user.email "my@email.com"
+          git add --all           
+      - name: Show git status
+        run: | 
+          git status
+      
+      - name: Commit
+        run: |  
+          git commit -a -m "New parameters"
+          
+      - name: Show git status
+        run: | 
+          git status
+                    
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
+    
+      - name: Cat timestamp file 
+        run: | 
+           tail timestamps.csv
+
