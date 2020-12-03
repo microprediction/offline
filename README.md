@@ -1,5 +1,5 @@
 ## offline
-Demonstrates one pattern for offline estimation of time series models using GitHub actions
+A model repository that updates itself using github actions
 
 ### What it does 
 
