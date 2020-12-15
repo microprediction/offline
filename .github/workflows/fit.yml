@@ -16,7 +16,7 @@ defaults:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 14
+    timeout-minutes: 25
 
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it

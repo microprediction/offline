@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 import time
 
 mr = MicroReader()
-STREAMS = mr.get_stream_names()
+STREAMS = [ n for n in mr.get_stream_names() if '~' not in n ]
 
 
 
