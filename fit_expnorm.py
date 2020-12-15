@@ -1,9 +1,7 @@
 from microprediction import MicroReader
-from microprediction.sequentialcrawler import SequentialStreamCrawler
-from microprediction.univariate.expnormdist import ExpNormDist, DEFAULT_EXPNORM_LOWER
+from microprediction.univariate.expnormdist import ExpNormDist
 import os
 import random
-import numpy as np
 import json
 from pprint import pprint
 from copy import deepcopy
@@ -13,6 +11,7 @@ import time
 
 mr = MicroReader()
 STREAMS = mr.get_stream_names()
+
 
 
 DEFAULT_EXPNORM_PARAMS = {'g1': 0.5, 'g2': 5.0, 'logK': -2., 'loc': 0.0, 'logScale': 0.0}

@@ -19,8 +19,7 @@ def fit_one():
                       regressor=preprocessing.StandardScaler() |
                        linear_model.LinearRegression(
                         optimizer=optim.SGD(0.01),
-                        intercept_lr=0.3
-                    )
+                        intercept_lr=0.3))
     metric = metrics.Rolling(metrics.MAE(), 12)
 
 

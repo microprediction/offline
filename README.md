@@ -9,7 +9,19 @@ A model repository that updates itself using github actions
 
 In this way the repository will always contain up to date parameters
 
-### To use 
+### Install
+
+    Not intended to be used as a package
+
+### To use
+
+Load pre-trained parameters or models. For example:
+
+    from getjson import getjson
+    params = getjson('https://raw.githubusercontent.com/microprediction/offline/main/modelfits/expnorm/z1~altitude~3555.json')
+
+
+### To do something similar 
 
 Don't fork this repository, as scheduled Github actions won't run on a fork. Instead, 
 make a new public repository and manually create a new GitHub action. Then cut and paste from workflows/fit.yml into your newly created workflow file.
