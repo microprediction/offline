@@ -26,6 +26,9 @@ Load pre-trained parameters or models. For example:
 Don't fork this repository, as scheduled Github actions won't run on a fork. Instead, 
 make a new public repository and manually create a new GitHub action. Then cut and paste from workflows/fit.yml into your newly created workflow file.
  
+## Tutorials
+
+New video tutorials are available at https://www.microprediction.com/python-1 to help you
+get started running crawlers at www.microprediction.com
  
-See you at www.microprediction.com 
 
