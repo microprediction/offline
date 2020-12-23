@@ -1,10 +1,12 @@
 ## offline
-A model repository that updates itself using github actions
+A model repository that conducts tests.  
 
 ### What it does 
 
  - Schedules a github action that ...
+ - Runs the model to check that it is working...
  - Updates some parameters and saves them, then 
+ - Deployed the updated model. 
  - Commits the parameter file to the master branch
 
 In this way the repository will always contain up to date parameters
